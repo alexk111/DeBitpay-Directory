@@ -2,4 +2,49 @@
 layout: layouts/base.njk
 title: Title Strings
 ---
-<h1>This is global data: {{siteData.name}}</h1>
+
+{% set placeslist = collections.places %}
+
+{# <h1>This is global data: {{siteData.name}}</h1> #}
+
+<main role="main" id="places">
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">
+        DeBitpay Directory
+      </h1>
+      <p class="lead text-muted">
+        Want to purchase something, but the merchant uses Bitpay? Find alternative places to spend your Bitcoin.
+      </p>
+      <p>
+        <input class="search form-control form-control-lg" placeholder="Type a merchant name..." />
+      </p>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <ul class="row list">
+        {% for item in placeslist %}
+          <div class="col-md-4">
+            <a class="card-link" href="{{ item.url | url }}">
+              <div class="card mb-4 box-shadow">
+                {# <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap"> #}
+                <div class="card-body">
+                  <h5 class="card-title">{{ item.data.title }}</h5>
+                  <p class="card-text">Find alternatives to {{ item.data.description | uncapitalize }}</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        {% endfor %}
+      </ul>
+
+      <p class="lead text-muted text-center">
+        Do you know of a merchant accepting Bitcoin via Bitpay that's not included here? Tag them on twitter with hashtag #DeBitpay.
+      </p>
+    </div>
+  </div>
+</main>
+
+<script src="/scripts/index.js"></script>
