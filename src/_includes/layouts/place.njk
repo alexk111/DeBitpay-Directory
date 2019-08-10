@@ -7,13 +7,40 @@ permalink: /{{ page.fileSlug }}/index.html
   <a href="{{ '/' | url }}">Go back</a>
 </div>
 
-<h1>{{ title }}</h1>
-<p>{{ description }}</p>
-
-<h2>Alternatives</h2>
-
 {% set alternativeslist = collections.alternatives %}
-{{inputPath}}
-{% for item in alternativeslist | altFor(page.fileSlug) %}
-{% include "place-summary.njk" %}
-{% endfor %}
+
+<main role="main" id="alternatives">
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">
+        Alternatives to {{ title }}
+      </h1>
+      <p class="lead text-muted">
+        Places to {{ description | uncapitalize | openSentence }} without BitPay.
+      </p>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <ul class="row list">
+        {% for item in alternativeslist | altFor(page.fileSlug) %}
+          <div class="col-md-4">
+            <a class="card-link" href="{{ item.data.homepage | url }}" target="_blank">
+              <div class="card mb-4 box-shadow">
+                <div class="card-body">
+                  <h5 class="card-title">{{ item.data.title }}</h5>
+                  <p class="card-text">{{ item.data.description }}</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        {% endfor %}
+      </ul>
+
+      <p class="lead text-muted text-center">
+        Do you know of an alternative to {{ title }} accepting Bitcoin without Bitpay that's not included here? Tag them on twitter with hashtag #DeBitpay. Or post an issue on GitHub.
+      </p>
+    </div>
+  </div>
+</main>

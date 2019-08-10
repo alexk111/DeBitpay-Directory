@@ -27,6 +27,10 @@ module.exports = eleventyConfig => {
     str.charAt(0).toLowerCase() + str.slice(1)
   )
 
+  eleventyConfig.addFilter('openSentence', str =>
+    str.charAt(str.length - 1) === '.' ? str.slice(0, str.length - 1) : str
+  )
+
   /* Markdown Plugins */
   let markdownIt = require('markdown-it')
   let markdownItAnchor = require('markdown-it-anchor')

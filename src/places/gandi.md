@@ -1,5 +1,6 @@
 ---
 title: Gandi
-description: Buy domains for Bitcoin.
+description: Buy domains with Bitcoin.
 homepage: https://gandi.com
+twitter: gandi
 ---

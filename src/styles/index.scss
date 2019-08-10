@@ -42,16 +42,25 @@ $color-brand: #246EB9;
 }
 
 .card-link {
-  > div, .card-text {
+  > div, .card-title, .card-text {
     transition: all 300ms ease-in-out;
   }
   &:hover {
     > div {
       transform: translateY(-6px);
     }
-    .card-text {
-      color: $color-brand;
-    }
+  }
+}
+
+#places .card-link:hover {
+  .card-text {
+    color: $color-brand;
+  }
+}
+
+#alternatives .card-link:hover {
+  .card-title {
+    color: $color-brand;
   }
 }
 

@@ -29,10 +29,9 @@ title: Title Strings
           <div class="col-md-4">
             <a class="card-link" href="{{ item.url | url }}">
               <div class="card mb-4 box-shadow">
-                {# <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap"> #}
                 <div class="card-body">
                   <h5 class="card-title">{{ item.data.title }}</h5>
-                  <p class="card-text">Find alternatives to {{ item.data.description | uncapitalize }}</p>
+                  <p class="card-text">Find alternatives to {{ item.data.description | uncapitalize | openSentence }} without Bitpay.</p>
                 </div>
               </div>
             </a>
@@ -41,7 +40,7 @@ title: Title Strings
       </ul>
 
       <p class="lead text-muted text-center">
-        Do you know of a merchant accepting Bitcoin via Bitpay that's not included here? Tag them on twitter with hashtag #DeBitpay.
+        Do you know of a merchant accepting Bitcoin via Bitpay that's not included here? Tag them on twitter with hashtag #DeBitpay. Or post an issue on GitHub.
       </p>
     </div>
   </div>

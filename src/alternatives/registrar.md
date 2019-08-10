@@ -1,6 +1,6 @@
 ---
 title: Registrar
-description: Buy domains for Bitcoin.
+description: Buy domains with Bitcoin.
 homepage: https://registrar.com
 altFor: ['gandi', 'namecheap']
 ---
