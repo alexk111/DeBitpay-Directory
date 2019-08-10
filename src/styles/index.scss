@@ -37,6 +37,10 @@ $color-brand: #246EB9;
   max-width: 40rem;
 }
 
+ul.list {
+  padding: 0;
+}
+
 .card-link, .card-link:hover {
   color: inherit;
 }
@@ -62,6 +66,10 @@ $color-brand: #246EB9;
   .card-title {
     color: $color-brand;
   }
+}
+
+.button-home {
+  border-radius: 0 0 8px 8px;
 }
 
 footer {

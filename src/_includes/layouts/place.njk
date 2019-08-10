@@ -3,17 +3,19 @@ layout: layouts/base.njk
 permalink: /{{ page.fileSlug }}/index.html
 ---
 
-<div>
-  <a href="{{ '/' | url }}">Go back</a>
-</div>
-
 {% set alternativeslist = collections.alternatives %}
 
 <main role="main" id="alternatives">
+  <ul class="nav justify-content-center">
+    <li class="nav-item">
+      <a href="{{ '/' | url }}" class="btn btn-lg btn-secondary button-home">DeBitpay Directory</a>
+    </li>
+  </ul>
+
   <section class="jumbotron text-center">
     <div class="container">
       <h1 class="jumbotron-heading">
-        Alternatives to {{ title }}
+        {{ title }} Alternatives
       </h1>
       <p class="lead text-muted">
         Places to {{ description | uncapitalize | openSentence }} without BitPay.
@@ -39,7 +41,7 @@ permalink: /{{ page.fileSlug }}/index.html
       </ul>
 
       <p class="lead text-muted text-center">
-        Do you know of an alternative to {{ title }} accepting Bitcoin without Bitpay that's not included here? Tag them on twitter with hashtag #DeBitpay. Or post an issue on GitHub.
+        Do you know of an alternative to {{ title }} accepting Bitcoin without Bitpay that's not included here? Tag them on Twitter with hashtag #DeBitpay. Or post an issue on GitHub.
       </p>
     </div>
   </div>
