@@ -1,0 +1,27 @@
+{%- set isPlace = layout == 'layouts/place.njk' -%}
+
+{% set absolutePageUrl %}{{ page.url | url | absoluteUrl(siteData.url) }}{% endset %}
+{%- if isPlace -%}
+  {%- set pageTitle -%}{{ title }} Alternatives accepting Bitcoin without BitPay{%- endset -%}
+  {%- set pageDescription -%}Explore {{ title }} Alternatives to {{ description | uncapitalize | openSentence }} without BitPay.{%- endset -%}
+{%- else -%}
+  {%- set pageTitle -%}{{ renderData.title or title or metadata.title }}{%- endset -%}
+  {%- set pageDescription -%}{{ renderData.description or description or metadata.description }}{%- endset -%}
+{%- endif -%}
+
+<title>{{ pageTitle }}</title>
+<meta name="description" content="{{ pageDescription }}" />
+<meta name="twitter:card" content="summary" />
+<meta name='twitter:creator' content='@alex_kaul'>
+<meta name="twitter:title" content="{{ pageTitle }}" />
+<meta name="twitter:description" content="{{ pageDescription }}" />
+<meta name="twitter:image" content="{{ '/images/logo-256x256.png' | url | absoluteUrl(siteData.url) }}" />
+<meta name='twitter:domain' content='debitpay.directory'>
+<meta property="og:title" content="{{ pageTitle }}" />
+<meta property="og:description" content="{{ pageDescription }}" />
+<meta property="og:url" content="{{ absolutePageUrl }}" />
+<meta property="og:image" content="{{ '/images/logo-1200x630.png' | url | absoluteUrl(siteData.url) }}" />
+<meta property='og:image:type' content='image/png' />
+<meta property='og:image:width' content='1200' />
+<meta property='og:image:height' content='630' />
+<meta property="og:site_name" content="DeBitpay Directory" />

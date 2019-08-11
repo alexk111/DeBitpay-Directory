@@ -1,3 +1,5 @@
+const pluginRss = require('@11ty/eleventy-plugin-rss')
+
 module.exports = eleventyConfig => {
   eleventyConfig.addPassthroughCopy('src/images')
 
@@ -30,6 +32,8 @@ module.exports = eleventyConfig => {
   eleventyConfig.addFilter('openSentence', str =>
     str.charAt(str.length - 1) === '.' ? str.slice(0, str.length - 1) : str
   )
+
+  eleventyConfig.addPlugin(pluginRss)
 
   /* Markdown Plugins */
   let markdownIt = require('markdown-it')

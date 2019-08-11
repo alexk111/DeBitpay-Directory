@@ -1,6 +1,7 @@
 ---
 layout: layouts/base.njk
-title: Title Strings
+title: DeBitpay Directory - Alternative places to spend Bitcoin without BitPay
+description: DeBitpay Directory lets you find places to spend Bitcoin without BitPay by recommending alternatives to places accepting Bitcoin via BitPay that you already know.
 ---
 
 {% set placeslist = collections.places %}
@@ -10,11 +11,12 @@ title: Title Strings
 <main role="main" id="places">
   <section class="jumbotron text-center">
     <div class="container">
+      <svg class="logo" xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 120 120" version="1.1"  xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><path d="M26.266,25.016l35.897,-22.016l-3.966,16.547c27.965,11.077 35.418,34.734 34.597,56.409c-6.872,-16.957 -19.764,-27.046 -40.447,-32.003l-4.065,16.96l-22.016,-35.897Z" style="fill-rule:nonzero;"/><path d="M53.127,52.877l1.346,-5.511c4.582,1.256 9.1,2.951 13.321,5.137l-2.577,11.021c1.35,-0.69 2.55,-1.22 3.9,-1.61c3.781,-1.365 7.985,-1.24 11.656,0.098c5.227,5.446 8.342,12.295 11.157,19.194c-0.017,4.532 -0.996,9.152 -2.638,13.186c-5.805,14.017 -18.667,22.303 -33.3,22.548c-5.706,0.381 -12.11,-0.55 -17.25,-2.674l14.385,-61.389m2.49,51.563l6.45,-27.656c1.2,-1.13 2.475,-1.965 3.975,-2.365c1.094,-0.347 2.229,-0.629 3.375,-0.675c1.068,-0.043 3.634,0.073 4.908,0.892c2.481,1.596 2.919,6.005 2.742,8.647c-0.505,7.568 -3.404,14.793 -10.125,18.976c-3.431,2.262 -7.527,2.512 -11.325,2.181"/></svg>
       <h1 class="jumbotron-heading">
         DeBitpay Directory
       </h1>
       <p class="lead text-muted">
-        Want to purchase something, but the merchant uses Bitpay? Find alternative places to spend your Bitcoin.
+        Want to purchase something, but the merchant uses BitPay? Find alternative places to spend your Bitcoin.
       </p>
       <p>
         <input class="search form-control form-control-lg" placeholder="Type a merchant name..." />
@@ -31,7 +33,7 @@ title: Title Strings
               <div class="card mb-4 box-shadow">
                 <div class="card-body">
                   <h5 class="card-title">{{ item.data.title }}</h5>
-                  <p class="card-text">Find alternatives to {{ item.data.description | uncapitalize | openSentence }} without Bitpay.</p>
+                  <p class="card-text">Find alternatives to {{ item.data.description | uncapitalize | openSentence }} without BitPay.</p>
                 </div>
               </div>
             </a>
@@ -40,7 +42,7 @@ title: Title Strings
       </ul>
 
       <p class="lead text-muted text-center">
-        Do you know of a merchant accepting Bitcoin via Bitpay that's not included here? Tag them on Twitter with hashtag #DeBitpay. Or post an issue on GitHub.
+        Do you know of a merchant accepting Bitcoin via BitPay that's not included here? Tag them on Twitter with hashtag #DeBitpay. Or post an issue on GitHub.
       </p>
     </div>
   </div>

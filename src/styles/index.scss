@@ -12,6 +12,19 @@ $color-brand: #246EB9;
   --jumbotron-padding-y: 3rem;
 }
 
+.logo {
+  path {
+    fill: $color-brand;
+  }
+}
+
+.button-logo {
+  vertical-align: bottom;
+  path {
+    fill: #fff;
+  }
+}
+
 .jumbotron {
   padding-top: var(--jumbotron-padding-y);
   padding-bottom: var(--jumbotron-padding-y);
