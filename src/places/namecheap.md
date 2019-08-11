@@ -1,6 +1,6 @@
 ---
 title: Namecheap
-description: Buy domains with Bitcoin.
-homepage: https://namecheap.com
-twitter: namecheap
+description: Buy domain names & pay bills with Bitcoin.
+homepage: https://www.namecheap.com/
+twitter:
 ---
