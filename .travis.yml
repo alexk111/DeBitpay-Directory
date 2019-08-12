@@ -12,3 +12,4 @@ deploy:
   keep-history: true
   on:
     branch: master
+  fqdn: debitpay.directory
