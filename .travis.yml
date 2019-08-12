@@ -11,3 +11,5 @@ deploy:
   on:
     branch: master
   fqdn: debitpay.directory
+env:
+  - ELEVENTY_ENV=production

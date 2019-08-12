@@ -32,6 +32,7 @@
     "babel-loader": "^8.0.6",
     "cssnano": "^4.1.10",
     "cssnano-preset-advanced": "^4.0.7",
+    "dotenv": "^8.0.0",
     "light-server": "^2.6.2",
     "list.js": "^1.5.0",
     "markdown-it": "^9.0.1",
