@@ -1,9 +1,7 @@
 language: node_js
 node_js:
   - 8
-before_script:
-  - npm install @11ty/eleventy -g
-script: eleventy --pathprefix="/"
+script: yarn build
 deploy:
   local-dir: dist
   provider: pages
