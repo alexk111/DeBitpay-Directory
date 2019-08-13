@@ -1,22 +1,22 @@
 const pluginRss = require('@11ty/eleventy-plugin-rss')
 
+function sortByTitle (a, b) {
+  const aTitle = a.data.title.toLowerCase()
+  const bTitle = b.data.title.toLowerCase()
+  if (aTitle < bTitle) return -1
+  else if (aTitle > bTitle) return 1
+  else return 0
+}
+
 module.exports = eleventyConfig => {
   eleventyConfig.addPassthroughCopy('src/images')
 
   eleventyConfig.addCollection('places', collection =>
-    collection.getFilteredByGlob('./src/places/*.md').sort((a, b) => {
-      if (a.data.title < b.data.title) return -1
-      else if (a.data.title > b.data.title) return 1
-      else return 0
-    })
+    collection.getFilteredByGlob('./src/places/*.md').sort(sortByTitle)
   )
 
   eleventyConfig.addCollection('alternatives', collection =>
-    collection.getFilteredByGlob('./src/alternatives/*.md').sort((a, b) => {
-      if (a.data.title < b.data.title) return -1
-      else if (a.data.title > b.data.title) return 1
-      else return 0
-    })
+    collection.getFilteredByGlob('./src/alternatives/*.md').sort(sortByTitle)
   )
 
   eleventyConfig.addFilter('altFor', (arr, altFor) =>
