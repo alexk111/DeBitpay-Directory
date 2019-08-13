@@ -31,7 +31,7 @@ permalink: /{{ page.fileSlug }}/index.html
       <ul class="row list">
         {% for item in alternativeslist | altFor(page.fileSlug) %}
           <div class="col-md-4">
-            <a class="card-link" href="{{ item.data.homepage | url }}" target="_blank">
+            <a class="card-link" href="{{ item.data.homepage + '?utm_source=DeBitpay.directory&utm_medium=respect' | url }}" target="_blank">
               <div class="card mb-4 box-shadow">
                 <div class="card-body">
                   <h5 class="card-title">{{ item.data.title }}</h5>
@@ -44,7 +44,7 @@ permalink: /{{ page.fileSlug }}/index.html
       </ul>
 
       <p class="lead text-muted text-center">
-        Do you know of an alternative to {{ title }} accepting Bitcoin without BitPay that's not included here? Tag them on Twitter with hashtag #DeBitpay. Or post an issue on GitHub.
+        Do you know of an alternative to <a href="{{ homepage + '?utm_source=DeBitpay.directory&utm_medium=disrespect' | url }}" target="_blank">{{ title }}</a> accepting Bitcoin without BitPay that's not included here? Tag them on Twitter with hashtag #DeBitpay. Or post an issue on GitHub.
       </p>
     </div>
   </div>
