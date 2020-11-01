@@ -5,7 +5,6 @@ homepage: https://www.zakservers.com/
 altFor:
   [
     "gandi",
-    "namecheap",
     "cyberghost-vpn",
     "expressvpn",
     "frootvpn",
