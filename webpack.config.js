@@ -1,13 +1,12 @@
-const path = require('path');
+const path = require("path");
 
 module.exports = {
   entry: {
-    index: './src/scripts/index.js',
-    common: './src/scripts/common.js'
+    index: "./src/scripts/index.js",
   },
   output: {
-    filename: '[name].js',
-    path: path.resolve(__dirname, 'dist/scripts')
+    filename: "[name].js",
+    path: path.resolve(__dirname, "dist/scripts"),
   },
   module: {
     rules: [
@@ -15,12 +14,12 @@ module.exports = {
         test: /\.m?js$/,
         exclude: /(node_modules|bower_components)/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
-            presets: ['@babel/preset-env']
-          }
-        }
-      }
-    ]
-  }
-}
+            presets: ["@babel/preset-env"],
+          },
+        },
+      },
+    ],
+  },
+};
