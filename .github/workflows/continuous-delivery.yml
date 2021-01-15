@@ -1,0 +1,30 @@
+name: CD
+
+on: push
+
+jobs:
+  buildAndDeploy:
+    runs-on: ubuntu-18.04
+
+    steps:
+      - uses: actions/checkout@v2.2.0
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v1.4.2
+        with:
+          node-version: 12.16.1
+
+      - name: Install Deps
+        run: |
+          yarn install
+      - name: Build
+        env:
+          ELEVENTY_ENV: production
+        run: |
+          yarn build
+      - name: Deploy to gh-pages
+        uses: JamesIves/github-pages-deploy-action@3.5.9
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: dist
